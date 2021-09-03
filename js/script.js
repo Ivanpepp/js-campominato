@@ -48,14 +48,12 @@
       }
     // creazione array di bombe in base alla difficolta` scelta
     let bombe = [];
-    for (let i = 0; i < difficulty; i++){
+    while (bombe.length < difficulty){
         let bombaRandom = getRandomInt(1,100);
         if(!(bombe.includes(bombaRandom))){ // non ci devono essere due bombe uguali 
             bombe.push(bombaRandom);
-        }else{
-            i--;
-        } 
     }
+}
     function getRandomInt(min, max) {
         min = Math.ceil(min);
         max = Math.floor(max);
@@ -63,7 +61,6 @@
     }
     let numeriScelti = [];
     let bandierina;
-    let punteggio = 0;
     let counter = 100 - bombe.length;
     for (let i = 0; i < counter; i++){
         bandierina= parseInt(prompt('inserisci un numero da 1 a 100'));
